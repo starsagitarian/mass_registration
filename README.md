@@ -7,7 +7,7 @@ This can enable the church authorities for:
   1. Have the ability to restrict participation to 50 people per service (as adviced by the government)
   2. Have details of the attendees in case the authorities want to cross check for contact tracing or other issues. 
   
- To this end, the above application is being created.
+ To this end, the above application is being created. Once deployed, this will be provided as a standalone link within the WordPress website. 
  
  This application has the following tech-stack
  
