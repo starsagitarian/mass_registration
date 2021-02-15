@@ -11,12 +11,12 @@ This can enable the church authorities for:
  
  This application has the following tech-stack
  
- ##Front End:
+ # Front End:
 <ul>
   <li>React-Redux</li>
 </ul>
  
-##Back End:
+# Back End:
 <ul>
   <li>Express</li>
   <li>MongoDb</li>
