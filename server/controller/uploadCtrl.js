@@ -17,12 +17,8 @@ const uploadCtrl = {
                 folder: 'avatar', width: 150, height: 150, crop: "fill"
             }, async(err, result) => {
                 if(err) throw err;
-
-                removeTmp(file.tempFilePath)
-
-                console.log(result);
-
-                res.json({url: result.secure_url})
+                removeTmp(file.tempFilePath);
+                res.json({url: result.secure_url});
             })
         
         } catch (err) {
