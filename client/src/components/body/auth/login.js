@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 import axios from 'axios';
+import {showErrMsg, showSuccessMsg} from '../../utils/notification/Notification';
+import {dispatchLogin} from '../../../redux/actions/authAction';
+import {useDispatch} from 'react-redux'
 
 const initialState = {
     email: '',
@@ -11,7 +14,9 @@ const initialState = {
 
 function Login() {
 
-    const [user, setUser] = useState(initialState); 
+    const [user, setUser] = useState(initialState);
+    const dispatch = useDispatch();
+    const history = useHistory(); 
 
     const {email, password, err, success} = user;
 
@@ -26,6 +31,10 @@ function Login() {
             const res = await axios.post('/user/login', {email, password})
             setUser({...user, err: '', success: res.data.msg})
 
+            localStorage.setItem('firstLogin', true);
+            dispatch(dispatchLogin);
+            history.push("/");
+
         } catch (err) {
             err.response.data.msg && 
             setUser({...user, err: err.response.data.msg, success: ''})
@@ -35,6 +44,8 @@ function Login() {
     return (
         <div className="login_page">
             <h2>Login</h2>
+            {err && showErrMsg(err)}
+            {success && showSuccessMsg(success)}
             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="email">Email Address</label>

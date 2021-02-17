@@ -108,7 +108,7 @@ const userControl = {
                 maxAge: 7*24*60*60*1000 // 7 days
             })
 
-            res.json({msg: "Login success!"})
+            res.json({msg: "Login successful!"})
         } catch (err) {
             return res.status(500).json({msg: err.message})
         }

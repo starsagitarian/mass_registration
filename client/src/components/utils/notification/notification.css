@@ -1,0 +1,17 @@
+.errMsg{
+    background: rgb(214, 10, 10);
+    color: #fff9;
+    text-align: center;
+    padding: 10px 0;
+    letter-spacing: 1.3px;
+    border-style: solid 2px rgb(47, 3, 3);
+}
+
+.successMsg{
+    background: rgb(9, 158, 54);
+    color: #fff9;
+    text-align: center;
+    padding: 10px 0;
+    letter-spacing: 1.3px;
+    border-style: solid 2px rgb(1, 51, 26);
+}

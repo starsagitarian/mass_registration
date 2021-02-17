@@ -19,7 +19,7 @@ code {
   width: 100%;
   min-height: 100vh;
   box-shadow: 0 0 20px #eee;
-  margin: 0 auto;
+  margin: auto;
   overflow: hidden;
 }
 
