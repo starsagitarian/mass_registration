@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 import {showErrMsg, showSuccessMsg} from '../../utils/notification/Notification';
+import {isEmpty, isEmail, validateNumber, isLength, isMatch} from '../../utils/validation/Validation'
 
 const initialState = {
     name: '',
@@ -26,8 +27,28 @@ function Register () {
 
     const handleSubmit = async e => {
         e.preventDefault()
-        try {
 
+            if (isEmpty(name) || isEmpty(number) || isEmpty(password)) 
+                return setUser({...user, err: "Please fill all the fields", success: ''});
+            
+            if (!validateNumber(number)) 
+                return setUser({...user, err: "Please enter a valid phone number!", success: ''});
+                
+            if (!isEmail(email)) 
+                return setUser({...user, err: "Invalid Email Address!!", success: ''});
+            
+            if(isLength(password))
+                return setUser({...user, err: "Password must be atleast 6 characters.", success: ''});
+        
+            if(!isMatch(password, cf_password))
+                return setUser({...user, err: "Password did not match.", success: ''});
+        
+        try {
+            const res = await axios.post('/user/register', {
+                name, email, number, password
+            });
+
+            setUser({...user, err: '', success: res.data.msg});
 
         } catch (err) {
             err.response.data.msg && 
