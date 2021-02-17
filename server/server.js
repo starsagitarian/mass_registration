@@ -13,6 +13,9 @@ app.use(fileUpload({
     useTempFiles: true
 }))
 
+app.use('/user', require('./router/routes'));
+app.use('/api', require('./router/upload'));
+
 const URI = process.env.MONGODB_URL;
 mongoose.connect(URI, {
     useCreateIndex: true,

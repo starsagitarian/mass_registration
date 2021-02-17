@@ -108,7 +108,7 @@ const userControl = {
                 maxAge: 7*24*60*60*1000 // 7 days
             })
 
-            res.json({msg: "Login success!"})
+            res.json({msg: "Login successful!"})
         } catch (err) {
             return res.status(500).json({msg: err.message})
         }
@@ -116,7 +116,6 @@ const userControl = {
     getAccessToken: (req, res) => {
         try {
             const rf_token = req.cookies.refreshtoken
-            console.log(rf_token);
             if(!rf_token) return res.status(400).json({msg: "Please login now!"})
 
             jwt.verify(rf_token, process.env.REFRESH_TOKEN_SECRET, (err, user) => {
@@ -146,9 +145,8 @@ const userControl = {
     },
     resetPassword: async (req, res) => {
         try {
-            const {password} = req.body
-            console.log(password);
-            const passwordHash = await bcrypt.hash(password, 12)
+            const {password} = req.body;
+            const passwordHash = await bcrypt.hash(password, 12);
 
             await Users.findOneAndUpdate({_id: req.user.id}, {
                 password: passwordHash
@@ -157,7 +155,7 @@ const userControl = {
             res.json({msg: "Password successfully changed! Login with your email id and the new password!!"})
 
         } catch (err) {
-            return res.status(500).json({msg: err.message})
+            return res.status(500).json({msg: err.message});
         }
     },
     getUserInfor: async (req, res) => {

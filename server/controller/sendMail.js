@@ -47,9 +47,9 @@ const sendEmail = async (to, url) => {
         to: to,
         subject: "Regarding your booking",
         html: `
-            <div style="max-width: 700px; margin:auto; border: 10px solid #ddd; padding: 50px 20px; font-size: 110%;">
-            <h2 style="text-align: center; text-transform: uppercase;color: teal;">Welcome to the Book Of Seats</h2>
-            <p>Congratulations! You're almost set to start using St. Mark Mission's Book Of Seats App.
+            <div style="max-width: 700px; margin:auto; border: 10px solid #ddd; padding: 50px 20px; font-size: 110%; align-items: center;">
+            <h2 style="text-align: center; text-transform: uppercase;color: teal;">Welcome to St. Mark Mission, Holy Mass Registration</h2>
+            <p>Congratulations! You're almost set to start using St. Mark Mission's Holy Mass Registration App.
                 Just click the button below to validate your email address.
             </p>
             
@@ -98,7 +98,7 @@ const forgotPassword = async (to, url, txt) => {
         subject: "Uh OH!! you forgot your password",
         html: `
             <div style="max-width: 700px; margin:auto; border: 10px solid #ddd; padding: 50px 20px; font-size: 110%;">
-            <h2 style="text-align: center; text-transform: uppercase;color: teal;">St. Mark Mission, Book Of Seats</h2>
+            <h2 style="text-align: center; text-transform: uppercase;color: teal;">St. Mark Mission, Holy Mass Registration</h2>
             <h3 style="text-align: center;">Reset your Password!!</h3>
             <p>So you forgot your Password!! No worries, Just click the button below to validate your email address.</p>
             
