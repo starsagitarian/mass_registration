@@ -28,16 +28,16 @@ function Login() {
     const handleSubmit = async e => {
         e.preventDefault()
         try {
-            const res = await axios.post('/user/login', {email, password})
-            setUser({...user, err: '', success: res.data.msg})
+            const res = await axios.post('/user/login', {email, password});
+            setUser({...user, err: '', success: res.data.msg});
 
             localStorage.setItem('firstLogin', true);
-            dispatch(dispatchLogin);
+            dispatch(dispatchLogin());
             history.push("/");
 
         } catch (err) {
             err.response.data.msg && 
-            setUser({...user, err: err.response.data.msg, success: ''})
+            setUser({...user, err: err.response.data.msg, success: ''});
         }
     };
 
