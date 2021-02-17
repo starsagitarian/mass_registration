@@ -43,7 +43,7 @@ function Login() {
 
     return (
         <div className="login_page">
-            <h2>Login</h2>
+            <h2><i className="fas fa-bible"></i><span> </span>Login</h2>
             {err && showErrMsg(err)}
             {success && showSuccessMsg(success)}
             <form onSubmit={handleSubmit}>
@@ -60,6 +60,8 @@ function Login() {
                     <Link to="/forgot_password">Forgot Password</Link>
                 </div>
             </form>
+            <br></br>
+            <p className="register"><Link to="/register">If you haven't registered yet, click here to Register</Link></p>
         </div>
     )
 }

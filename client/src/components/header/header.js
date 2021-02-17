@@ -13,6 +13,7 @@ function Header() {
                 <div>
                     <h1><Link to="/">Holy Mass Registration</Link></h1>
                     <p><Link to="/">St. Mark Mission, London</Link></p>
+                    <p>Version 1.0.0</p>
                 </div>
             </div>
             <ul>

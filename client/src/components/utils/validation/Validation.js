@@ -1,4 +1,3 @@
-import React from 'react';
 
 export const isEmpty = value => {
     if(!value) return true

@@ -21,6 +21,7 @@ header ul li {
     display: inline-block;
     padding: 10px 20px;
     opacity: 0.5;
+    align-items: center;
 }
 
 header ul li:hover {

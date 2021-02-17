@@ -50,5 +50,15 @@
     margin-top: 10px;
     margin-right: 10px;
     border-radius: 10px;
-
 }   
+
+.login_page p {
+    margin: 10px 0;
+    text-align: center;
+    text-decoration: rgb(74, 10, 10) underline;
+}
+
+.login_page a {
+    color:teal;
+    font-weight: 400;
+}
